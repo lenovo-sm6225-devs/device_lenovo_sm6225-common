@@ -8,6 +8,9 @@
 # Data files
 /data/per_boot(/.*)?                                                    u:object_r:per_boot_file:s0
 
+# Device nodes
+/dev/stune(/.*)?	                                                u:object_r:cgroup:s0
+
 # Display
 /sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/disp_param        u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/panel_info        u:object_r:vendor_sysfs_graphics:s0
