@@ -77,7 +77,6 @@ on post-fs-data
     mkdir /vendor/data/tombstones 0771 system system
 
 on early-boot
-    start vendor.sensors
     setprop partition.vendor.verified.hash_alg sha256
     verity_update_state
 
@@ -91,6 +90,9 @@ on boot
     setprop vendor.usb.dpl.inst.name "dpl"
     setprop vendor.usb.qdss.inst.name "qdss"
     setprop vendor.usb.controller 4e00000.dwc3
+
+#Sensor
+    start vendor.sensors
 
 #Load WLAN driver
     insmod /vendor/lib/modules/qca_cld3_wlan.ko
