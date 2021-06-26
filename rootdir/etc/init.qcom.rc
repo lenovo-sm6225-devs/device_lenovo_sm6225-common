@@ -238,6 +238,12 @@ on boot
     # limit discard size to 128MB in order to avoid long IO latency
     write /sys/block/sda/queue/discard_max_bytes 134217728
 
+    # Enable qcrild and data services
+    enable vendor.qcrild
+    enable vendor.qcrild2
+    enable vendor.dataqti
+    enable vendor.dataadpl
+
 # +bug 692121, lishuwen.wt,ADD,20211106, add vibrator sepolicy
     chown system system /sys/devices/platform/soc/soc:wt_vibrator/leds/vibrator/activate
     chown system system /sys/devices/platform/soc/soc:wt_vibrator/leds/vibrator/duration
