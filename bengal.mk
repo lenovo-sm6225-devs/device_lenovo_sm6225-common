@@ -385,7 +385,7 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@2.1-service.multihal \
+    android.hardware.sensors@2.1-service.lenovo_bengal-multihal \
     libsensorndkbridge
 
 # Servicetracker
