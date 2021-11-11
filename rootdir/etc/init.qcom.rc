@@ -112,7 +112,7 @@ on early-boot
     #start btwlansn
 #-oak-451,liaojiaxin.wt,20211102,add btwlansn service
 
-    setprop init.svc.console stopped
+    stop console
 
 on boot
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
