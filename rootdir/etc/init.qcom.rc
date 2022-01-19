@@ -784,11 +784,6 @@ on property:sys.lenovotb.panel.angle=3
 on property:ro.vendor.ril.mbn_copy_completed=1
     write /data/vendor/radio/copy_complete 1
 
-service qvop-daemon /vendor/bin/qvop-daemon
-    class late_start
-    user system
-    group system drmrpc
-
 service vendor.atfwd /vendor/bin/ATFWD-daemon
     class late_start
     user system
