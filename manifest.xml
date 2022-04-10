@@ -122,6 +122,7 @@
             <name>ISoundTriggerHw</name>
             <instance>default</instance>
         </interface>
+        <fqname>@2.0::ISoundTriggerHw/default</fqname>
         <fqname>@2.3::ISoundTriggerHw/default</fqname>
     </hal>
     <hal format="hidl">
