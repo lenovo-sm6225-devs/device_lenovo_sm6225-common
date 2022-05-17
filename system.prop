@@ -51,8 +51,5 @@ ro.vendor.use_data_netmgrd=true
 DEVICE_PROVISIONED=1
 ril.subscription.types=NV,RUIM
 
-# SSR
-persist.vendor.ssr.restart_level=ALL_ENABLE
-
 # Zygote
 persist.device_config.runtime_native.usap_pool_enabled=true
