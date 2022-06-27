@@ -160,6 +160,9 @@ debug.stagefright.ccodec=1
 debug.stagefright.omx_default_rank=0
 debug.stagefright.omx_default_rank.sw-audio=1
 
+# Netflix Properties
+ro.netflix.bsp_rev=Q6115-31409-1
+
 # NTP
 persist.backup.ntpServer=0.pool.ntp.org
 
