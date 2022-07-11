@@ -106,6 +106,7 @@ ro.crypto.volume.filenames_mode=aes-256-cts
 vendor.display.idle_time=0
 
 # DPM
+persist.vendor.dpm.feature=11
 persist.vendor.dpmhalservice.enable=1
 
 # FRP
