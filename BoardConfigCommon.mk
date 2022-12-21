@@ -113,6 +113,9 @@ TARGET_COPY_OUT_VENDOR := vendor
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := bengal
 
+# RIL
+ENABLE_VENDOR_RIL_SERVICE := false
+
 # Sepolicy
 include device/qcom/sepolicy_vndr/SEPolicy.mk
 
