@@ -76,10 +76,6 @@ on late-fs
 on post-fs-data
     mkdir /vendor/data/tombstones 0771 system system
 
-on early-boot
-    setprop partition.vendor.verified.hash_alg sha256
-    verity_update_state
-
 on boot
 #USB controller configuration
     #setprop vendor.usb.rndis.func.name "gsi"
