@@ -188,17 +188,3 @@ on property:persist.vendor.keymaster.ready=FALSE
 on property:persist.vendor.keymaster.ready=TRUE
     setprop ro.odm.lenovo.attestationkey 1
 #-ExtR baiyun1.wt,ADD, 20220304, add user getprop ro.odm.lenovo.attestationkey
-
-#+ExtR OAK-5273,yuanchengbo1.wt,ADD,2022/02/25,Error on fingerprint and product name on GSI and VTS report
-service read_cc /vendor/bin/read_cc
-    user root
-    group system
-    oneshot
-    disabled
-
-on init
-    start read_cc
-
-on property:vendor.fingerprint.init=Ready
-    setprop ro.odm.build.fingerprint ${vendor.fingerprint.temp}
-#-ExtR OAK-5273,yuanchengbo1.wt,ADD,2022/02/25,Error on fingerprint and product name on GSI and VTS report
