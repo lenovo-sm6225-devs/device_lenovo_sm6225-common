@@ -70,6 +70,7 @@ on post-fs-data
     mkdir /vendor/data/tombstones 0771 system system
 
 on boot
+    write /dev/cpuset/audio-app/cpus 1-2
     # Add a cpuset for the camera daemon
     # We want all cores for camera
     mkdir /dev/cpuset/camera-daemon
