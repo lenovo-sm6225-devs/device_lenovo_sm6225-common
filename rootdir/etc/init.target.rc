@@ -30,8 +30,7 @@
 on early-init
     exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules audio_q6_pdr audio_q6_notifier audio_snd_event audio_apr audio_adsp_loader audio_q6 audio_native audio_usf audio_pinctrl_lpi audio_swr audio_swr_ctrl audio_platform audio_stub audio_wcd_core audio_wcd9xxx audio_wsa881x_analog audio_bolero_cdc audio_va_macro audio_rx_macro audio_tx_macro audio_mbhc audio_wcd937x audio_wcd937x_slave audio_pm2250_spmi audio_rouleur audio_rouleur_slave audio_machine_bengal
     write /proc/sys/kernel/sched_boost 1
-    exec u:r:vendor_qti_init_shell:s0 -- /vendor/bin/init.qti.early_init.sh
-    setprop ro.soc.model ${ro.vendor.qti.soc_model}
+
 on early-init
         exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules audio_aw882xx
 
@@ -79,7 +78,7 @@ on boot
     chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
     chmod 0660 /dev/cpuset/camera-daemon/tasks
 
-#USB controller configuration
+    # USB controller configuration
     #setprop vendor.usb.rndis.func.name "gsi"
     #setprop vendor.usb.rmnet.func.name "gsi"
     setprop vendor.usb.rndis.func.name "rndis"
@@ -89,10 +88,10 @@ on boot
     setprop vendor.usb.qdss.inst.name "qdss"
     setprop vendor.usb.controller 4e00000.dwc3
 
-#Sensor
+    # Sensor
     start vendor.sensors
 
-#Load WLAN driver
+    # Load WLAN driver
     insmod /vendor/lib/modules/qca_cld3_wlan.ko
 
 on boot && property:persist.vendor.usb.controller.default=*
@@ -106,13 +105,11 @@ on charger
     setprop vendor.usb.controller 4e00000.dwc3
     setprop sys.usb.configfs 1
 
-#pd-mapper
 service vendor.pd_mapper /vendor/bin/pd-mapper
     class core
     user system
     group system
 
-#Peripheral manager
 service vendor.per_mgr /vendor/bin/pm-service
     class core
     user system
@@ -124,15 +121,7 @@ service vendor.per_proxy /vendor/bin/pm-proxy
     user system
     group system
     disabled
-# +OAK-731,zhangchangfeng.wt,ADD,2021/12/10,delete telephony
-#service vendor.mdm_helper /vendor/bin/mdm_helper
-#    class core
-#    group system wakelock
-#    disabled
 
-#service vendor.mdm_launcher /vendor/bin/sh /vendor/bin/init.mdm.sh
-#    class core
-#    oneshot
 # -OAK-731,zhangchangfeng.wt,ADD,2021/12/10,delete telephony
 on property:init.svc.vendor.per_mgr=running
     start vendor.per_proxy
@@ -163,6 +152,7 @@ on property:vendor.dcvs.prop=1
 on boot
     start wt_tee_check
 
+#- bug 697284,zhaizhenhong.wt,ADD,20211216,bind and set vendor.wt.rpmb_status
 service wt_tee_check /vendor/bin/wt_tee_check --tee_set
     class core
     user root
@@ -170,7 +160,6 @@ service wt_tee_check /vendor/bin/wt_tee_check --tee_set
     oneshot
     disabled
     seclabel u:r:tee:s0
-#- bug 697284,zhaizhenhong.wt,ADD,20211216,bind and set vendor.wt.rpmb_status
 
 #+ExtR baiyun1.wt,ADD, 20220304, add user getprop ro.odm.lenovo.attestationkey
 service check_keymaster /vendor/bin/check_keymaster
