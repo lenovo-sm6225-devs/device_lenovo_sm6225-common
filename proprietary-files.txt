@@ -1,4 +1,4 @@
-# All unpinned blobs below are extracted from TB128FU_CN_OPEN_USER_Q00012.0_S_ZUI_13.5.476_ST_220805
+# All unpinned blobs below are extracted from TB128FU_CN_OPEN_USER_Q00012.0_S_ZUI_14.0.675_ST_221216
 
 # ADSP
 vendor/bin/adsprpcd
