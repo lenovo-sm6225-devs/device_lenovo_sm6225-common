@@ -6,6 +6,20 @@
 
 COMMON_PATH := device/lenovo/sm6225-common
 
+# A/B
+AB_OTA_UPDATER := true
+
+# A/B
+AB_OTA_PARTITIONS += \
+    system \
+    system_ext \
+    boot \
+    recovery \
+    vendor \
+    product \
+    vbmeta
+
+
 # APEX
 DEXPREOPT_GENERATE_APEX_IMAGE := true
 
