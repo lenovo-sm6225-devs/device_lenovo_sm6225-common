@@ -375,8 +375,8 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.sh
 
 PRODUCT_PACKAGES += \
-    fstab.qcom \
-    fstab.qcom_ramdisk \
+    fstab.default \
+    fstab.default_ramdisk \
     init.qcom.rc \
     init.qcom.usb.rc \
     init.recovery.qcom.rc \
